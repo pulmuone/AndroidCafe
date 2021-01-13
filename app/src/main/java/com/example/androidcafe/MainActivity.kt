@@ -83,7 +83,6 @@ class MainActivity : AppCompatActivity() {
             holder.rowTextView.text = data1[position]
         }
 
-        //
         override fun getItemCount(): Int {
             return imgRes.size
         }
