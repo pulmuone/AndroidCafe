@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.androidcafe.databinding.ActivityMainBinding
 import com.example.androidcafe.databinding.RowBinding
 
@@ -27,10 +29,15 @@ class MainActivity : AppCompatActivity() {
         //TOOLBAR를 액션바 대신 사용
         setSupportActionBar(binding.toolbar)
 
+        binding.toolbar.setTitle("툴바 제목 변경")
+
         val adapter1 = RecyclerAdapter()
         binding.recycler1.adapter = adapter1
 
         binding.recycler1.layoutManager = LinearLayoutManager(this)
+        //binding.recycler1.layoutManager = GridLayoutManager(this, 2)
+        //binding.recycler1.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        // binding.recycler1.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
